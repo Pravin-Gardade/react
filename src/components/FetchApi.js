@@ -15,28 +15,32 @@ const FetchApi = () => {
     useEffect(() => {
         fetchData();
     }, [])
-
+    console.log("data in console",data)
     return (
         <div>
-            MyApi 
+            MyApi
             <br />
             <button onClick={fetchData}>Get Api</button>
-           
-            <div>
-               
-            </div>
-            <pre>{JSON.stringify(data,null,3)}</pre>
-            {/* <div>
-       <ul>
-         {data.map((item) =>(
-            <li key={item.title}>{item.label}</li>
-         )
-         
-         )}
-       </ul>
-       </div> */}
 
-        
+            <div>
+
+            </div>
+            {
+                data.map((item) => {
+                    return (
+                        <div>
+                            <p>
+                                {item.id.attributes["im:id"]}
+                            </p>
+                        </div>
+                    )
+                })
+            }
+            <text>
+            </text>
+           
+
+
         </div>
     )
 }
